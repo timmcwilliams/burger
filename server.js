@@ -23,9 +23,9 @@ var routes = require("./controllers/burgers_controller.js");
 // ________________________________________________________________
 
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
-app.use(bodyParser.urlencoded({ extended: false }));
+// app.use(bodyParser.urlencoded({ extended: false }));
 
 app.use("/", routes);
 
