@@ -4,7 +4,7 @@ var connection;
 if (process.env.burgers_db) {
    connection = mysql.createConnection(process.env.TIMS_URL);
 } else {
-  connection= mysql.createConnetion({
+  connection= mysql.createConnection({
 
   
   port: 3306,
@@ -12,7 +12,8 @@ if (process.env.burgers_db) {
   user: "root",
   password: "password",
   database: "burgers_db"
-});
+  });
+};
 
 // Make connection.
 connection.connect(function(err) {
