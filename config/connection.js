@@ -2,7 +2,7 @@ var mysql = require("mysql");
 
 var connection;
 if (process.env.burgers_db) {
-   connection = mysql.createConnection(process.env.TIMS_URL);
+   connection = mysql.createConnection(process.env.TIMSDB_URL);
 } else {
   connection= mysql.createConnection({
 
