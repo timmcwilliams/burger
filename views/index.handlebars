@@ -3,9 +3,10 @@
 <h2>burgers that are not devored</h2>
 
 <ul>
-  {{#each burger}}
-    {{#unless devouredy}}
-      {{> burger/burger-block devoured=true}}
+  <p>this should start the devoured list</p>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
     {{/unless}}
   {{/each}}
 </ul>
@@ -13,18 +14,21 @@
 <h2>Burgers that are devoured!</h2>
 
 <ul>
-  {{#each burger}}
+  <p>Not eaten list</p>
+  {{#each burgers}}
     {{#if devoured}}
-      {{> burger/burger-block devoured=false}}
+      {{> burgers/burger-block devoured=false}}
     {{/if}}
   {{/each}}
 </ul>
 
 <h2>Add a burger</h2>
-{{!-- <form class="create-form"> --}}
 
 <form method="POST" action="/api/burgers">
     <label for="burger_name">burger Name:</label>
     <input type="text" id="burger" name="name">
     <button type="submit">Add burger</button>
+    <label for="devor">Eaten?</label><br>
+    <input type="radio" name="devoured" value="1" checked> Eaten<br>
+    <input type="radio" name="not-devored" value="0"> Not Eaten
 </form>
