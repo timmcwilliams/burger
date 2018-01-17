@@ -1,26 +1,50 @@
 <h1>burger!</h1>
 
 <h2>burgers that are not devored</h2>
+  <ul>
+    <p>should show all </p>
+  {{#each burgers}}
+  	<li>
+  	   <p>ID: {{this.id}}</p>
+       <p>burger: {{this.burger_name}}</p>
+
+  	</li>
+  {{/each}}
+</ul>
+<br>
+<p>this should start the devoured list</p>
 
 <ul>
-  <p>this should start the devoured list</p>
   {{#each burgers}}
-    {{#unless devoured}}
+    {{#if devoured}}
       {{> burgers/burger-block devoured=true}}
-    {{/unless}}
+<p>burger: {{this.burger_name}}</p>
+    {{/if}}
+    
   {{/each}}
 </ul>
 
 <h2>Burgers that are devoured!</h2>
-
 <ul>
+  {{#each burgers}}
+    {{#unless devoured}}
+      {{> burgers/burger-block devoured=true}}
+<p>burger: {{this.burger_name}}</p>
+    {{/unless}}
+    
+  {{/each}}
+</ul>
+
+
+
+{{!-- <ul>
   <p>Not eaten list</p>
   {{#each burgers}}
     {{#if devoured}}
       {{> burgers/burger-block devoured=false}}
     {{/if}}
   {{/each}}
-</ul>
+</ul> --}}
 
 <h2>Add a burger</h2>
 
