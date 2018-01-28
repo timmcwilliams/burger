@@ -2,14 +2,9 @@
 	{{name}}
 
 	<button class="change-if-devoured" data-id="{{id}}" data-newdevoured="{{devoured}}">
-		{{#if devoured}}
-		
-		
-		You Ate Me
-		
-		
-		{{else}}Eat Me!{{/if}}
+		{{#if devoured}} You Ate Me {{else}}Eat Me!{{/if}}
 	</button>
 
-	{{!-- <button class="delete-burger" data-id="{{this.id}}">DELETE!</button> --}}
+	
+	<button class="delete-burger" data-id="{{this.id}}">DELETE!</button>
 </li>
